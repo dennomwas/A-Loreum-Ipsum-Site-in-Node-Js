@@ -1,7 +1,7 @@
-let lorem = require('./lorem-data');
+const lorem = require('./lorem-data');
 
 // sentences
-const getSentence = (noOfLines) => {
+const getSentences = (noOfLines) => {
     let splitSentences = lorem.loremIpsumData.split(".");
 
     const sentences = splitSentences.map(sentence => {
@@ -11,14 +11,13 @@ const getSentence = (noOfLines) => {
 }
 
 // paragraphs
-const getParagraph = (noOfParagraphs) => {
+const getParagraphs = (noOfParagraphs) => {
     let splitParagraphs = lorem.loremIpsumData.split("\n");
 
     const paragraphs = splitParagraphs.filter((paragraph, index) => {
         return paragraph[index];
     });
-    return paragraphs.slice(0, noOfParagraphs)
-
+    return paragraphs.slice(0, noOfParagraphs);
 }
 
 // words
@@ -27,6 +26,12 @@ const getWords = (noOfWords) => {
 
     const words = splitWords.map(word => {
         return word.replace(/[,.]/g, '');
-    })
+    });
     return words.splice(0, noOfWords);
+}
+
+module.exports = {
+    loremSentence: getSentences,
+    loremParagraph: getParagraphs,
+    loremWord: getWords
 }
