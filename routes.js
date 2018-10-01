@@ -13,7 +13,6 @@ let header = {
 
 const homeRoute = (request, response) => {
     if (request.url === "/") {
-        console.log(request.method)
         if (request.method === "GET") {
             response.writeHead(200, header)
             render.view("header", null, response);

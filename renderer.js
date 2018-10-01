@@ -10,7 +10,10 @@ const view = (templateName, values, response) => {
         if (values === null) {
             return response.write(fileContents);
         }
-        const content = fileContents.replace("{{" + 'sentence' + "}}", values);
+        const resultString = values.map(value => {
+            return `<li>${value}</li>`;
+        })
+        const content = fileContents.replace("{{" + 'sentence' + "}}", resultString.join(' '));
         return response.write(content);
     } catch (error) {
         console.log('error', error)
