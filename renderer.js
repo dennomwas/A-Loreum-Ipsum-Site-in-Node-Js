@@ -4,7 +4,7 @@ const view = (templateName, values, response) => {
     try {
         // Read from the template file
         const fileContents = fs.readFileSync(`./views/${templateName}.html`, {
-            encoding: "utf8"
+            encoding: "utf8";
         });
 
         if (values === null) {
@@ -16,7 +16,7 @@ const view = (templateName, values, response) => {
         const content = fileContents.replace("{{" + 'sentence' + "}}", resultString.join(' '));
         return response.write(content);
     } catch (error) {
-        console.log('error', error)
+        console.log('error', error);
     }
 }
 module.exports.view = view;
