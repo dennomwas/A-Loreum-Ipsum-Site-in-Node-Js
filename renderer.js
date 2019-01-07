@@ -4,7 +4,7 @@ const view = (templateName, values, response) => {
     try {
         // Read from the template file
         const fileContents = fs.readFileSync(`./views/${templateName}.html`, {
-            encoding: "utf8";
+            encoding: "utf8"
         });
 
         if (values === null) {
