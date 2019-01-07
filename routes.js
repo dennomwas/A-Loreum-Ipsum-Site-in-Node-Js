@@ -8,7 +8,7 @@ const {
 } = require('./Lorem-server/lorem');
 const render = require("./renderer.js");
 let header = {
-    "Content-Type": "text/html";
+    "Content-Type": "text/html"
 };
 
 const homeRoute = (request, response) => {
